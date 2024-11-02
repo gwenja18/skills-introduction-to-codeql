@@ -13,7 +13,7 @@ def index():
 
     if name:
         cursor.execute(
-            "SELECT * FROM books WHERE name LIKE '%" + name + "%'"
+            "SÉLECTIONNEZ * DANS les livres OÙ nom COMME %s" , ( '%' + nom + '%' ,)
         )
         books = [Book(*row) for row in cursor]
 
